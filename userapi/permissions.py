@@ -17,7 +17,4 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
         return obj.owner == request.user
 
 
-class IsLoggedUser(permissions.BasePermission):
-    def has_object_permission(self, request, view, obj):
-        return request.user.is_authenticated() or obj == request.user
 
